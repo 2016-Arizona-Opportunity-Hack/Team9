@@ -1,0 +1,36 @@
+body { 
+	padding-top: 70px; 
+	overflow-y: scroll
+}
+h3{
+	padding-left: 2%;
+}
+p{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#sad home-image{
+	padding: 5px; 
+}
+div.panel-body asdf{
+	padding-left: 3%; 
+	padding-right: 3%;
+}
+.mcc-class-id{
+	font-weight: bold;
+    margin-top: 10px;
+}
+#class-headers-top{
+	text-align: center;
+}
+#class-headers{
+	text-align: center;
+    margin-top: 20px;
+}
+.employedfrom{
+	width: 20%;
+}
+#work-headers{
+	font-weight: bold;
+	font-size: 13px;
+}
