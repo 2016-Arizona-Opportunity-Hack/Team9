@@ -71,13 +71,31 @@ public class CityService {
 
 
 	public static void main(String[] args) {
+		
+		JSONParser parser = new JSONParser();
+
+		String msg = "{\"Description\":\"description\",\"RelatedLinks\":\"relatedlinks\",\"id\":\"1\",\"CityName\":\"cityname\",\"ImgURL\":\"imgurl\",\"id_Admins\":\"1\"}";
+		
+		Object obj=null;
+		try {
+			obj = parser.parse(msg);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		JSONObject jsonObject = (JSONObject) obj;
+		
+		System.out.println(jsonObject.toJSONString());
+		
+		
 		CityService service = new CityService();
 		City city = new City();
-		city.setCityName("cityname");
-		city.setDescription("description");
-		city.setRelatedLinks("relatedlinks");
-		city.setImgUrl("imgurl");
-		city.setIdAdmins("contact info");
+		city.setCityName(jsonObject.get("CityName").toString());
+		city.setDescription(jsonObject.get("Description").toString());
+		city.setRelatedLinks(jsonObject.get("RelatedLinks").toString());
+		city.setImgUrl(jsonObject.get("ImgURL").toString());
+		city.setIdAdmins(jsonObject.get("id_Admins").toString());
 		service.addCity(city);
 	}
 	public List<HashMap<String, Object>> getAllCities(){
