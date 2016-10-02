@@ -30,16 +30,16 @@ CREATE TABLE `Cities` (
 DROP TABLE IF EXISTS `Individual`;
     
 CREATE TABLE `Individual` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `username` VARCHAR NULL DEFAULT NULL,
-  `password` VARCHAR NULL DEFAULT NULL,
-  `EmailId` VARCHAR NULL DEFAULT NULL,
-  `First Name` VARCHAR NULL DEFAULT NULL,
-  `Last Name` VARCHAR NULL DEFAULT NULL,
-  `Summary` VARCHAR NULL DEFAULT NULL,
-  `Skills` VARCHAR NULL DEFAULT NULL,
-  `Interests` VARCHAR NULL DEFAULT NULL,
-  `Img URL` VARCHAR NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NULL DEFAULT NULL,
+  `password` VARCHAR(100) NULL DEFAULT NULL,
+  `EmailId` VARCHAR(100) NULL DEFAULT NULL,
+  `First Name` VARCHAR(100) NULL DEFAULT NULL,
+  `Last Name` VARCHAR(100) NULL DEFAULT NULL,
+  `Summary` VARCHAR(100) NULL DEFAULT NULL,
+  `Skills` VARCHAR(100) NULL DEFAULT NULL,
+  `Interests` VARCHAR(100) NULL DEFAULT NULL,
+  `Img URL` VARCHAR(100) NULL DEFAULT NULL,
   `id_User type` INTEGER NULL DEFAULT NULL,
   `id_Cities` INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -53,8 +53,8 @@ CREATE TABLE `Individual` (
 DROP TABLE IF EXISTS `Skills`;
     
 CREATE TABLE `Skills` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Skill Name` VARCHAR NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `Skill Name` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -79,12 +79,12 @@ CREATE TABLE `Admins` (
 DROP TABLE IF EXISTS `Posts`;
     
 CREATE TABLE `Posts` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Date` VARCHAR NULL DEFAULT NULL,
-  `Tags` VARCHAR NULL DEFAULT NULL,
-  `Header` VARCHAR NULL DEFAULT NULL,
-  `Content` VARCHAR NULL DEFAULT NULL,
-  `Parent Id` VARCHAR NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `Date` VARCHAR(100) NULL DEFAULT NULL,
+  `Tags` VARCHAR(100) NULL DEFAULT NULL,
+  `Header` VARCHAR(100) NULL DEFAULT NULL,
+  `Content` VARCHAR(100) NULL DEFAULT NULL,
+  `Parent Id` VARCHAR(100) NULL DEFAULT NULL,
   `id_Cities` INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
@@ -97,10 +97,10 @@ CREATE TABLE `Posts` (
 DROP TABLE IF EXISTS `Connector`;
     
 CREATE TABLE `Connector` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
   `id_Individual` INTEGER NULL DEFAULT NULL,
   `id_Posts` INTEGER NULL DEFAULT NULL,
-  `Post Time` VARCHAR NULL DEFAULT NULL,
+  `Post Time` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -112,7 +112,7 @@ CREATE TABLE `Connector` (
 DROP TABLE IF EXISTS `Skill Connector`;
     
 CREATE TABLE `Skill Connector` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
   `id_Individual` INTEGER NULL DEFAULT NULL,
   `id_Skills` INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -126,9 +126,9 @@ CREATE TABLE `Skill Connector` (
 DROP TABLE IF EXISTS `User type`;
     
 CREATE TABLE `User type` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Individual` VARCHAR NULL DEFAULT NULL,
-  `Company` VARCHAR NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `Individual` VARCHAR(100) NULL DEFAULT NULL,
+  `Company` VARCHAR(100) NULL DEFAULT NULL,
   `Group` VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
@@ -145,37 +145,3 @@ ALTER TABLE `Connector` ADD FOREIGN KEY (id_Individual) REFERENCES `Individual` 
 ALTER TABLE `Connector` ADD FOREIGN KEY (id_Posts) REFERENCES `Posts` (`id`);
 ALTER TABLE `Skill Connector` ADD FOREIGN KEY (id_Individual) REFERENCES `Individual` (`id`);
 ALTER TABLE `Skill Connector` ADD FOREIGN KEY (id_Skills) REFERENCES `Skills` (`id`);
-
--- ---
--- Table Properties
--- ---
-
--- ALTER TABLE `Cities` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Individual` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Skills` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Admins` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Posts` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Connector` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Skill Connector` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `User type` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ---
--- Test Data
--- ---
-
--- INSERT INTO `Cities` (`id`,`City Name`,`Description`,`Related Links`,`Img URL`,`id_Admins`) VALUES
--- ('','','','','','');
--- INSERT INTO `Individual` (`id`,`username`,`password`,`EmailId`,`First Name`,`Last Name`,`Summary`,`Skills`,`Interests`,`Img URL`,`id_User type`,`id_Cities`) VALUES
--- ('','','','','','','','','','','','');
--- INSERT INTO `Skills` (`id`,`Skill Name`) VALUES
--- ('','');
--- INSERT INTO `Admins` (`id`,`Contacts`) VALUES
--- ('','');
--- INSERT INTO `Posts` (`id`,`Date`,`Tags`,`Header`,`Content`,`Parent Id`,`id_Cities`) VALUES
--- ('','','','','','','');
--- INSERT INTO `Connector` (`id`,`id_Individual`,`id_Posts`,`Post Time`) VALUES
--- ('','','','');
--- INSERT INTO `Skill Connector` (`id`,`id_Individual`,`id_Skills`) VALUES
--- ('','','');
--- INSERT INTO `User type` (`id`,`Individual`,`Company`,`Group`) VALUES
--- ('','','','');
