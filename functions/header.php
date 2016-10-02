@@ -22,10 +22,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="home-navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-						<li><a href="./city.php">City</a></li>
-						<li><a href="./profile.php">Profile</a></li>
-						<li><a href="./post.php">Post</a></li>
+						<li id="Home"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+						<li id="City"><a href="./city.php">City</a></li>
+						<li id="Profile"><a href="./profile.php">Profile</a></li>
+						<li id="Post"><a href="./post.php">Post</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 					
@@ -40,10 +40,10 @@
 							</ul>
 						</li>
 						<?php }else{ ?>
-							<li>
+							<li id="Login">
 								<a href="./login.php"><div >Login</div></a>
 							</li>
-							<li>
+							<li id="SignUp">
 								<a href="./signup.php"><div >Sign Up</div></a>
 							</li>
 						<?php } ?>

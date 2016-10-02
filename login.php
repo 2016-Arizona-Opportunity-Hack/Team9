@@ -1,4 +1,8 @@
-<?php
+	<script>
+		pageclass = "Login";
+	</script>
+	
+	<?php
 	require_once("./functions/header.php");
 ?>
       <link rel="stylesheet" type="text/css" href="login.css">

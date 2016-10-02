@@ -1,4 +1,8 @@
-<?php
+	<script>
+		pageclass = "SignUp";
+	</script>
+	
+	<?php
 	require_once("./functions/header.php");
 ?>
 

@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("mycities")
+@Path("myresource")
 public class MyResource {
 
     /**
@@ -17,16 +17,9 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-/*    @GET
+    @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
-    }*/
-    
-    @GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public MyJaxbBean getMyBean() {
-	    return new MyJaxbBean("Agamemnon", 32);
-	}
-    
+    }
 }

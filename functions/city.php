@@ -1,7 +1,7 @@
+
 <?php
 	require_once("./functions/header.php");
 ?>
-
 <div class="container theme-showcase" role="main">
 	<div class="panel panel-default">
 		<div class="panel-body">
@@ -143,6 +143,11 @@
 		</div>
 	</div>
 </div>
+
+	<script>
+		pageclass = "City";
+	</script>
+	
 <?php
 	require_once("./functions/footer.php");
 ?>

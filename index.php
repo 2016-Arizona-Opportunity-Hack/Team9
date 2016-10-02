@@ -1,3 +1,7 @@
+	<script>
+		pageclass = "Home";
+	</script>
+	
 	<!-- Fixed navbar -->
 	<?php require_once('./functions/header.php'); ?>
 
