@@ -1,6 +1,3 @@
-<?php
-	require_once("./functions/header.php");
-?>
 
 <div class="container theme-showcase" role="main">
 	<div class="panel panel-default">
@@ -143,6 +140,3 @@
 		</div>
 	</div>
 </div>
-<?php
-	require_once("./functions/footer.php");
-?>

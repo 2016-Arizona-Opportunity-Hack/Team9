@@ -2,6 +2,7 @@ body {
 	padding-top: 70px; 
 	overflow-y: scroll;
 	padding-bottom: 50px; 
+	background: #55554F;
 }
 h3{
 	padding-left: 2%;
@@ -36,6 +37,6 @@ div.panel-body asdf{
 	font-size: 13px;
 }
 .list-group {
-	max-height:180px;
+	max-height:210px;
     overflow-y:scroll;
 }

@@ -22,20 +22,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="home-navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Profile <span class="sr-only">(current)</span></a></li>
-						<li><a href="#">City</a></li>
-						<li><a href="#">Problem</a></li>
-						<li><a href="#">Discussion</a></li>
+						<li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+						<li><a href="./city.php">City</a></li>
+						<li><a href="./profile.php">Profile</a></li>
+						<li><a href="./post.php">Post</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<form class="navbar-form navbar-right">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search">
-								</div>
-								<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-							</form>
-						</li>
+					
 					<?php 
 						if(isset($_SESSION['CITYCONNECTIONSESSION'])){?><li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">USERNAME_HERE<span class="caret"></span></a>
@@ -47,11 +40,15 @@
 							</ul>
 						</li>
 						<?php }else{ ?>
-						
+							<li>
+								<a href="./login.php"><div >Login</div></a>
+							</li>
+							<li>
+								<a href="./signup.php"><div >Sign Up</div></a>
+							</li>
 						<?php } ?>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container -->
 		</nav>
 
-<?php

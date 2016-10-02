@@ -1,7 +1,6 @@
 <?php
 	require_once("./functions/header.php");
 ?>
-
 <div class="container theme-showcase" role="main">
 	<div class="panel panel-default">
 		<div class="panel-body">
