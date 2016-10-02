@@ -1,5 +1,6 @@
 body { 
 	padding-top: 70px; 
+	padding-bottom: 70px; 
 	overflow-y: scroll
 }
 h3{
@@ -33,4 +34,8 @@ div.panel-body asdf{
 #work-headers{
 	font-weight: bold;
 	font-size: 13px;
+}
+.list-group {
+	max-height:210px;
+    overflow-y:scroll;
 }
