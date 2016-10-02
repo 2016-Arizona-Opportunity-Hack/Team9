@@ -36,6 +36,6 @@ div.panel-body asdf{
 	font-size: 13px;
 }
 .list-group {
-	max-height:210px;
+	max-height:180px;
     overflow-y:scroll;
 }
